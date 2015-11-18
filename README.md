@@ -23,3 +23,18 @@ for (Farm farm : farms) {
     System.out.println(farm.getFarmNo() + "\t" + farm.getFarmName());
 }
 ```
+
+## Usage for maven
+
+Add the following repository setting into pom.xml,
+
+```
+<repositories>
+  <repository>
+    <id>pcc-mvn-repo</id>
+    <url>https://ymstmsys.github.io/mvn-repo/</url>
+  </repository>
+</repositories>
+```
+
+and add dependency setting.
