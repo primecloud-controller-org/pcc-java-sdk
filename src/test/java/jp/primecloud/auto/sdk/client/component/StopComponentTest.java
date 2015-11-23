@@ -19,7 +19,7 @@ public class StopComponentTest {
 
     @Test
     public void test() {
-        pcc.stopComponent(1L, 1L, Arrays.asList(1L));
+        pcc.stopComponent(1L, Arrays.asList(1L));
     }
 
 }

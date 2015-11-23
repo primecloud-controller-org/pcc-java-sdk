@@ -18,7 +18,7 @@ public class EditLoadBalancerHealthCheckTest {
 
     @Test
     public void test() {
-        EditLoadBalancerHealthCheckParameter parameter = new EditLoadBalancerHealthCheckParameter(1L, 1L, "HTTP", 80,
+        EditLoadBalancerHealthCheckParameter parameter = new EditLoadBalancerHealthCheckParameter(1L, "HTTP", 80,
                 "/index.html", 5, 10, 3, 2);
 
         pcc.editLoadBalancerHealthCheck(parameter);

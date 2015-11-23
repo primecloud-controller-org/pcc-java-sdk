@@ -16,7 +16,6 @@ public class EditLoadBalancerHealthCheck {
 
     public void execute(EditLoadBalancerHealthCheckParameter parameter) {
         Map<String, String> parameters = new LinkedHashMap<String, String>();
-        parameters.put("FarmNo", parameter.getFarmNo().toString());
         parameters.put("LoadBalancerNo", parameter.getLoadBalancerNo().toString());
         parameters.put("CheckProtocol", parameter.getCheckProtocol());
         parameters.put("CheckPort", parameter.getCheckPort().toString());

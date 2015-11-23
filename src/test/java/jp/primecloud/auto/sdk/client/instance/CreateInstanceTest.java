@@ -19,7 +19,7 @@ public class CreateInstanceTest {
 
     @Test
     public void test() {
-        CreateInstanceParameter parameter = new CreateInstanceParameter(1L, "instanceName", 2L, 101L);
+        CreateInstanceParameter parameter = new CreateInstanceParameter(1L, "instanceName", 101L);
         parameter.withComment("comment");
 
         Long instanceNo = pcc.createInstance(parameter);

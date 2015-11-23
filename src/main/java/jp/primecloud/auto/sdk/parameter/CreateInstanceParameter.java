@@ -6,18 +6,15 @@ public class CreateInstanceParameter {
 
     private String instanceName;
 
-    private Long platformNo;
-
     private Long imageNo;
 
     private String comment;
 
     private String instanceType;
 
-    public CreateInstanceParameter(Long farmNo, String instanceName, Long platformNo, Long imageNo) {
+    public CreateInstanceParameter(Long farmNo, String instanceName, Long imageNo) {
         this.farmNo = farmNo;
         this.instanceName = instanceName;
-        this.platformNo = platformNo;
         this.imageNo = imageNo;
     }
 
@@ -37,10 +34,6 @@ public class CreateInstanceParameter {
 
     public String getInstanceName() {
         return instanceName;
-    }
-
-    public Long getPlatformNo() {
-        return platformNo;
     }
 
     public Long getImageNo() {

@@ -17,7 +17,7 @@ public class DeleteLoadBalancerListenerTest {
 
     @Test
     public void test() {
-        pcc.deleteLoadBalancerListener(1L, 1L, 80);
+        pcc.deleteLoadBalancerListener(1L, 80);
     }
 
 }

@@ -17,7 +17,7 @@ public class DeleteLoadBalancerTest {
 
     @Test
     public void test() {
-        pcc.deleteLoadBalancer(1L, 1L);
+        pcc.deleteLoadBalancer(1L);
     }
 
 }

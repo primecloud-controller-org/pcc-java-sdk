@@ -17,7 +17,7 @@ public class StartInstanceTest {
 
     @Test
     public void test() {
-        pcc.startInstance(1L, 1L);
+        pcc.startInstance(1L);
     }
 
 }

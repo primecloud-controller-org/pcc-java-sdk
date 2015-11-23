@@ -1,4 +1,4 @@
-package jp.primecloud.auto.sdk.model;
+package jp.primecloud.auto.sdk.model.component;
 
 import java.util.List;
 
@@ -24,8 +24,8 @@ public class Component {
     @JsonProperty("Instances")
     private List<ComponentInstance> instances;
 
-    @JsonProperty("LoadBalancerName")
-    private String loadBalancerName;
+    @JsonProperty("LoadBalancers")
+    private List<ComponentLoadBalancer> loadBalancers;
 
     @JsonProperty("Status")
     private String status;
@@ -78,12 +78,12 @@ public class Component {
         this.instances = instances;
     }
 
-    public String getLoadBalancerName() {
-        return loadBalancerName;
+    public List<ComponentLoadBalancer> getLoadBalancers() {
+        return loadBalancers;
     }
 
-    public void setLoadBalancerName(String loadBalancerName) {
-        this.loadBalancerName = loadBalancerName;
+    public void setLoadBalancers(List<ComponentLoadBalancer> loadBalancers) {
+        this.loadBalancers = loadBalancers;
     }
 
     public String getStatus() {

@@ -17,7 +17,7 @@ public class DeleteComponentTest {
 
     @Test
     public void test() {
-        pcc.deleteComponent(1L, 1L);
+        pcc.deleteComponent(1L);
     }
 
 }

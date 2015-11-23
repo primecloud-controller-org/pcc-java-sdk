@@ -2,8 +2,6 @@ package jp.primecloud.auto.sdk.parameter;
 
 public class EditComponentParameter {
 
-    private Long farmNo;
-
     private Long componentNo;
 
     private Integer diskSize;
@@ -16,8 +14,7 @@ public class EditComponentParameter {
 
     private String customParam3;
 
-    public EditComponentParameter(Long farmNo, Long componentNo, Integer diskSize) {
-        this.farmNo = farmNo;
+    public EditComponentParameter(Long componentNo, Integer diskSize) {
         this.componentNo = componentNo;
         this.diskSize = diskSize;
     }
@@ -40,10 +37,6 @@ public class EditComponentParameter {
     public EditComponentParameter withCustomParam3(String customParam3) {
         this.customParam3 = customParam3;
         return this;
-    }
-
-    public Long getFarmNo() {
-        return farmNo;
     }
 
     public Long getComponentNo() {

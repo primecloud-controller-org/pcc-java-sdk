@@ -1,18 +1,15 @@
 package jp.primecloud.auto.sdk.client.platform;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 
 import jp.primecloud.auto.sdk.JacksonUtils;
 import jp.primecloud.auto.sdk.Requester;
-import jp.primecloud.auto.sdk.model.Platform;
+import jp.primecloud.auto.sdk.model.platform.Platform;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.fasterxml.jackson.databind.node.NullNode;
 
 public class ListPlatform {
 
@@ -22,21 +19,12 @@ public class ListPlatform {
         this.requester = requester;
     }
 
-    public List<Platform> execute(Long farmNo) {
-        Map<String, String> parameters = new LinkedHashMap<String, String>();
-        parameters.put("FarmNo", farmNo.toString());
+    public List<Platform> execute() {
+        JsonNode jsonNode = requester.execute("/ListPlatform");
+        jsonNode = JacksonUtils.getField(jsonNode, "Platforms");
 
-        JsonNode jsonNode = requester.execute("/ListPlatform", parameters);
-        jsonNode = JacksonUtils.getField(jsonNode, "Platforms.Platform");
-
-        if (jsonNode == null) {
+        if (jsonNode == null || jsonNode instanceof NullNode) {
             return new ArrayList<Platform>();
-        }
-
-        if (jsonNode instanceof ObjectNode) {
-            Platform platform = JacksonUtils.toObject(jsonNode, new TypeReference<Platform>() {
-            });
-            return Arrays.asList(platform);
         }
 
         return JacksonUtils.toObject(jsonNode, new TypeReference<List<Platform>>() {

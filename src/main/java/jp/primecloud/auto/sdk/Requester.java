@@ -33,7 +33,7 @@ public class Requester {
 
     private static Log log = LogFactory.getLog(Requester.class);
 
-    protected String apiUrl;
+    protected String url;
 
     protected String accessId;
 
@@ -41,10 +41,12 @@ public class Requester {
 
     protected PccOptions options;
 
+    protected String apiPath = "/rest";
+
     protected static final Pattern errorMessagePattern = Pattern.compile("\\[(.*?)\\] (.*)");
 
     public Requester(String url, String accessId, String accessKey, PccOptions options) {
-        this.apiUrl = url.endsWith("/") ? url + "rest" : url + "/rest";
+        this.url = url.endsWith("/") ? url.substring(0, url.length() - 1) : url;
         this.accessId = accessId;
         this.accessKey = accessKey;
         this.options = options;
@@ -78,9 +80,8 @@ public class Requester {
     }
 
     protected String request(String endpoint, Map<String, String> parameters) {
-        String endpointUrl = apiUrl + endpoint;
-        String queryString = createQueryString(endpointUrl, parameters);
-        String url = endpointUrl + "?" + queryString;
+        String queryString = createQueryString(apiPath + endpoint, parameters);
+        String url = this.url + apiPath + endpoint + "?" + queryString;
 
         log.trace("[API Request] " + url);
 
@@ -110,7 +111,7 @@ public class Requester {
         }
     }
 
-    protected String createQueryString(String endpointUrl, Map<String, String> parameters) {
+    protected String createQueryString(String endpointPath, Map<String, String> parameters) {
         StringBuilder param = new StringBuilder();
         param.append("AccessId=").append(accessId);
         param.append("&Timestamp=").append(new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(new Date()));
@@ -121,7 +122,7 @@ public class Requester {
             }
         }
 
-        String signature = HmacUtils.hmacSha256Hex(accessKey, endpointUrl + "?" + param.toString());
+        String signature = HmacUtils.hmacSha256Hex(accessKey, endpointPath + "?" + param.toString());
 
         param.append("&Signature=").append(signature);
 

@@ -18,7 +18,7 @@ public class CreateLoadBalancerListenerTest {
 
     @Test
     public void test() {
-        CreateLoadBalancerListenerParameter parameter = new CreateLoadBalancerListenerParameter(1L, 1L, 80, 80, "HTTP");
+        CreateLoadBalancerListenerParameter parameter = new CreateLoadBalancerListenerParameter(1L, 80, 80, "HTTP");
 
         pcc.createLoadBalancerListener(parameter);
     }

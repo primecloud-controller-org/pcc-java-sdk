@@ -16,7 +16,6 @@ public class EditLoadBalancer {
 
     public void execute(EditLoadBalancerParameter parameter) {
         Map<String, String> parameters = new LinkedHashMap<String, String>();
-        parameters.put("FarmNo", parameter.getFarmNo().toString());
         parameters.put("LoadBalancerNo", parameter.getLoadBalancerNo().toString());
         parameters.put("ComponentNo", parameter.getComponentNo().toString());
         parameters.put("SecurityGroups", parameter.getSecurityGroups());

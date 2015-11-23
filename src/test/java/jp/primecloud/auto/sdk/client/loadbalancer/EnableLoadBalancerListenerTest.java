@@ -17,7 +17,7 @@ public class EnableLoadBalancerListenerTest {
 
     @Test
     public void test() {
-        pcc.enableLoadBalancerListener(1L, 1L, 80);
+        pcc.enableLoadBalancerListener(1L, 80);
     }
 
 }

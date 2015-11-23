@@ -2,12 +2,13 @@ package jp.primecloud.auto.sdk;
 
 import java.io.IOException;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.databind.node.NullNode;
 
 public class JacksonUtils {
 
@@ -15,7 +16,7 @@ public class JacksonUtils {
 
     static {
         objectMapper = new ObjectMapper();
-        objectMapper.disable(SerializationFeature.WRITE_NULL_MAP_VALUES);
+        objectMapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
         objectMapper.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
     }
 
@@ -48,8 +49,8 @@ public class JacksonUtils {
         String[] names = fieldName.split("\\.");
         for (String name : names) {
             jsonNode = jsonNode.get(name);
-            if (jsonNode == null) {
-                return null;
+            if (jsonNode == null || jsonNode instanceof NullNode) {
+                return jsonNode;
             }
         }
 

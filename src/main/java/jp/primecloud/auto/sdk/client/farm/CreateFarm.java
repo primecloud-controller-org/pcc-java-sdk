@@ -19,7 +19,7 @@ public class CreateFarm {
 
     public Long execute(String farmName, Long templateNo, String comment) {
         Map<String, String> parameters = new LinkedHashMap<String, String>();
-        parameters.put("CloudName", farmName);
+        parameters.put("FarmName", farmName);
         parameters.put("TemplateNo", templateNo.toString());
 
         if (comment != null) {

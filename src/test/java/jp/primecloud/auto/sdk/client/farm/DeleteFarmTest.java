@@ -17,7 +17,7 @@ public class DeleteFarmTest {
 
     @Test
     public void test() {
-        pcc.deleteFarm(2L);
+        pcc.deleteFarm(1L);
     }
 
 }

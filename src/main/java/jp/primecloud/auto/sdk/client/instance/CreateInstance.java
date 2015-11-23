@@ -22,7 +22,6 @@ public class CreateInstance {
         Map<String, String> parameters = new LinkedHashMap<String, String>();
         parameters.put("FarmNo", parameter.getFarmNo().toString());
         parameters.put("InstanceName", parameter.getInstanceName());
-        parameters.put("PlatformNo", parameter.getPlatformNo().toString());
         parameters.put("ImageNo", parameter.getImageNo().toString());
 
         if (parameter.getComment() != null) {

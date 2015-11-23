@@ -18,7 +18,7 @@ public class EditInstanceAwsTest {
 
     @Test
     public void test() {
-        EditInstanceAwsParameter parameter = new EditInstanceAwsParameter(1L, 1L, "instanceType", "keyName",
+        EditInstanceAwsParameter parameter = new EditInstanceAwsParameter(1L, "instanceType", "keyName",
                 "securityGroups", "subnet");
         pcc.editInstanceAws(parameter);
     }

@@ -17,7 +17,7 @@ public class DetachLoadBalancerTest {
 
     @Test
     public void test() {
-        pcc.detachLoadBalancer(1L, 1L, 1L);
+        pcc.detachLoadBalancer(1L, 1L);
     }
 
 }

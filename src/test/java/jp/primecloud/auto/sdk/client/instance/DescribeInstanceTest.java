@@ -4,7 +4,7 @@ import static org.junit.Assert.assertNotNull;
 import jp.primecloud.auto.sdk.JacksonUtils;
 import jp.primecloud.auto.sdk.Pcc;
 import jp.primecloud.auto.sdk.TestFactory;
-import jp.primecloud.auto.sdk.model.Instance;
+import jp.primecloud.auto.sdk.model.instance.Instance;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -20,7 +20,7 @@ public class DescribeInstanceTest {
 
     @Test
     public void test() {
-        Instance instance = pcc.describeInstance(1L, 1L);
+        Instance instance = pcc.describeInstance(1L);
 
         assertNotNull(instance);
 

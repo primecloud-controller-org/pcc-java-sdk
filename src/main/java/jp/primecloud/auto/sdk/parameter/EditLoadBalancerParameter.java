@@ -2,8 +2,6 @@ package jp.primecloud.auto.sdk.parameter;
 
 public class EditLoadBalancerParameter {
 
-    private Long farmNo;
-
     private Long loadBalancerNo;
 
     private Long componentNo;
@@ -16,8 +14,7 @@ public class EditLoadBalancerParameter {
 
     private Boolean isInternal;
 
-    public EditLoadBalancerParameter(Long farmNo, Long loadBalancerNo, Long componentNo, String securityGroups) {
-        this.farmNo = farmNo;
+    public EditLoadBalancerParameter(Long loadBalancerNo, Long componentNo, String securityGroups) {
         this.loadBalancerNo = loadBalancerNo;
         this.componentNo = componentNo;
         this.securityGroups = securityGroups;
@@ -36,10 +33,6 @@ public class EditLoadBalancerParameter {
     public EditLoadBalancerParameter withIsInternal(Boolean isInternal) {
         this.isInternal = isInternal;
         return this;
-    }
-
-    public Long getFarmNo() {
-        return farmNo;
     }
 
     public Long getLoadBalancerNo() {

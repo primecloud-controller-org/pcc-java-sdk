@@ -13,9 +13,8 @@ public class DeleteLoadBalancerListener {
         this.requester = requester;
     }
 
-    public void execute(Long farmNo, Long loadBalancerNo, Integer loadBalancerPort) {
+    public void execute(Long loadBalancerNo, Integer loadBalancerPort) {
         Map<String, String> parameters = new LinkedHashMap<String, String>();
-        parameters.put("FarmNo", farmNo.toString());
         parameters.put("LoadBalancerNo", loadBalancerNo.toString());
         parameters.put("LoadBalancerPort", loadBalancerPort.toString());
 

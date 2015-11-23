@@ -17,7 +17,7 @@ public class DeleteInstanceTest {
 
     @Test
     public void test() {
-        pcc.deleteInstance(1L, 1L);
+        pcc.deleteInstance(1L);
     }
 
 }

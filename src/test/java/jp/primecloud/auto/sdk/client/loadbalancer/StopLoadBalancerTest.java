@@ -17,7 +17,7 @@ public class StopLoadBalancerTest {
 
     @Test
     public void test() {
-        pcc.stopLoadBalancer(1L, 1L);
+        pcc.stopLoadBalancer(1L);
     }
 
 }

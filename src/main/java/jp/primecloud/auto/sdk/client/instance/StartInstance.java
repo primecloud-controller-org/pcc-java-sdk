@@ -13,13 +13,12 @@ public class StartInstance {
         this.requester = requester;
     }
 
-    public void execute(Long farmNo, Long instanceNo) {
-        execute(farmNo, instanceNo, null);
+    public void execute(Long instanceNo) {
+        execute(instanceNo, null);
     }
 
-    public void execute(Long farmNo, Long instanceNo, Boolean isStartService) {
+    public void execute(Long instanceNo, Boolean isStartService) {
         Map<String, String> parameters = new LinkedHashMap<String, String>();
-        parameters.put("FarmNo", farmNo.toString());
         parameters.put("InstanceNo", instanceNo.toString());
 
         if (isStartService != null) {

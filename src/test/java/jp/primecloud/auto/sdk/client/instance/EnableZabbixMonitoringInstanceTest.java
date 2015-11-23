@@ -17,7 +17,7 @@ public class EnableZabbixMonitoringInstanceTest {
 
     @Test
     public void test() {
-        pcc.enableZabbixMonitoringInstance(1L, 1L);
+        pcc.enableZabbixMonitoringInstance(1L);
     }
 
 }

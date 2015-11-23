@@ -13,9 +13,8 @@ public class DisableZabbixMonitoringInstance {
         this.requester = requester;
     }
 
-    public void execute(Long farmNo, Long instanceNo) {
+    public void execute(Long instanceNo) {
         Map<String, String> parameters = new LinkedHashMap<String, String>();
-        parameters.put("FarmNo", farmNo.toString());
         parameters.put("InstanceNo", instanceNo.toString());
 
         requester.execute("/DisableZabbixMonitoringInstance", parameters);

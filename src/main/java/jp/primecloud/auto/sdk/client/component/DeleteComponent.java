@@ -13,9 +13,8 @@ public class DeleteComponent {
         this.requester = requester;
     }
 
-    public void execute(Long farmNo, Long componentNo) {
+    public void execute(Long componentNo) {
         Map<String, String> parameters = new LinkedHashMap<String, String>();
-        parameters.put("FarmNo", farmNo.toString());
         parameters.put("ComponentNo", componentNo.toString());
 
         requester.execute("/DeleteComponent", parameters);

@@ -17,7 +17,7 @@ public class AttachComponentTest {
 
     @Test
     public void test() {
-        pcc.attachComponent(1L, 1L, 1L);
+        pcc.attachComponent(1L, 1L);
     }
 
 }

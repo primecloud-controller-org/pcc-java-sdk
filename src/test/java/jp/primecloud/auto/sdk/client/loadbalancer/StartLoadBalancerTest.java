@@ -17,7 +17,7 @@ public class StartLoadBalancerTest {
 
     @Test
     public void test() {
-        pcc.startLoadBalancer(1L, 1L);
+        pcc.startLoadBalancer(1L);
     }
 
 }

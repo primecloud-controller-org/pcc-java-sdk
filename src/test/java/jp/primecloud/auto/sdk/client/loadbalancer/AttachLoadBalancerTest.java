@@ -17,7 +17,7 @@ public class AttachLoadBalancerTest {
 
     @Test
     public void test() {
-        pcc.attachLoadBalancer(1L, 1L, 1L);
+        pcc.attachLoadBalancer(1L, 1L);
     }
 
 }

@@ -17,7 +17,7 @@ public class DetachComponentTest {
 
     @Test
     public void test() {
-        pcc.detachComponent(1L, 1L, 1L);
+        pcc.detachComponent(1L, 1L);
     }
 
 }

@@ -4,7 +4,7 @@ import static org.junit.Assert.assertNotNull;
 import jp.primecloud.auto.sdk.JacksonUtils;
 import jp.primecloud.auto.sdk.Pcc;
 import jp.primecloud.auto.sdk.TestFactory;
-import jp.primecloud.auto.sdk.model.LoadBalancer;
+import jp.primecloud.auto.sdk.model.loadbalancer.LoadBalancer;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -20,7 +20,7 @@ public class DescribeLoadBalancerTest {
 
     @Test
     public void test() {
-        LoadBalancer loadBalancer = pcc.describeLoadBalancer(1L, 1L);
+        LoadBalancer loadBalancer = pcc.describeLoadBalancer(1L);
 
         assertNotNull(loadBalancer);
 

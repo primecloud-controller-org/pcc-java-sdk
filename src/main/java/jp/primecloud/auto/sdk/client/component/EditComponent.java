@@ -16,7 +16,6 @@ public class EditComponent {
 
     public void execute(EditComponentParameter parameter) {
         Map<String, String> parameters = new LinkedHashMap<String, String>();
-        parameters.put("FarmNo", parameter.getFarmNo().toString());
         parameters.put("ComponentNo", parameter.getComponentNo().toString());
         parameters.put("DiskSize", parameter.getDiskSize().toString());
 

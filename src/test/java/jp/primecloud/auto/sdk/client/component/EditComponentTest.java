@@ -18,7 +18,7 @@ public class EditComponentTest {
 
     @Test
     public void test() {
-        EditComponentParameter parameter = new EditComponentParameter(1L, 1L, 1);
+        EditComponentParameter parameter = new EditComponentParameter(1L, 1);
         pcc.editComponent(parameter);
     }
 

@@ -2,8 +2,6 @@ package jp.primecloud.auto.sdk.parameter;
 
 public class CreateLoadBalancerListenerParameter {
 
-    private Long farmNo;
-
     private Long loadBalancerNo;
 
     private Integer loadBalancerPort;
@@ -14,9 +12,8 @@ public class CreateLoadBalancerListenerParameter {
 
     private Long sslKeyNo;
 
-    public CreateLoadBalancerListenerParameter(Long farmNo, Long loadBalancerNo, Integer loadBalancerPort,
-            Integer servicePort, String protocol) {
-        this.farmNo = farmNo;
+    public CreateLoadBalancerListenerParameter(Long loadBalancerNo, Integer loadBalancerPort, Integer servicePort,
+            String protocol) {
         this.loadBalancerNo = loadBalancerNo;
         this.loadBalancerPort = loadBalancerPort;
         this.servicePort = servicePort;
@@ -26,10 +23,6 @@ public class CreateLoadBalancerListenerParameter {
     public CreateLoadBalancerListenerParameter withSslKeyNo(Long sslKeyNo) {
         this.sslKeyNo = sslKeyNo;
         return this;
-    }
-
-    public Long getFarmNo() {
-        return farmNo;
     }
 
     public Long getLoadBalancerNo() {

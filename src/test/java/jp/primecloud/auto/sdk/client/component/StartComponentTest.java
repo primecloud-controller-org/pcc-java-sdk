@@ -19,7 +19,7 @@ public class StartComponentTest {
 
     @Test
     public void test() {
-        pcc.startComponent(1L, 1L, Arrays.asList(1L));
+        pcc.startComponent(1L, Arrays.asList(1L));
     }
 
 }

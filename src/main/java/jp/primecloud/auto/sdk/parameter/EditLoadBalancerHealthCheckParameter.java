@@ -2,8 +2,6 @@ package jp.primecloud.auto.sdk.parameter;
 
 public class EditLoadBalancerHealthCheckParameter {
 
-    private Long farmNo;
-
     private Long loadBalancerNo;
 
     private String checkProtocol;
@@ -20,10 +18,9 @@ public class EditLoadBalancerHealthCheckParameter {
 
     private Integer unhealthyThreshold;
 
-    public EditLoadBalancerHealthCheckParameter(Long farmNo, Long loadBalancerNo, String checkProtocol,
-            Integer checkPort, String checkPath, Integer checkTimeout, Integer checkInterval, Integer healthyThreshold,
+    public EditLoadBalancerHealthCheckParameter(Long loadBalancerNo, String checkProtocol, Integer checkPort,
+            String checkPath, Integer checkTimeout, Integer checkInterval, Integer healthyThreshold,
             Integer unhealthyThreshold) {
-        this.farmNo = farmNo;
         this.loadBalancerNo = loadBalancerNo;
         this.checkProtocol = checkProtocol;
         this.checkPort = checkPort;
@@ -32,10 +29,6 @@ public class EditLoadBalancerHealthCheckParameter {
         this.checkInterval = checkInterval;
         this.healthyThreshold = healthyThreshold;
         this.unhealthyThreshold = unhealthyThreshold;
-    }
-
-    public Long getFarmNo() {
-        return farmNo;
     }
 
     public Long getLoadBalancerNo() {

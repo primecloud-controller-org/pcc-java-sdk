@@ -2,8 +2,6 @@ package jp.primecloud.auto.sdk.parameter;
 
 public class EditInstanceAwsParameter {
 
-    private Long farmNo;
-
     private Long instanceNo;
 
     private String instanceType;
@@ -22,9 +20,8 @@ public class EditInstanceAwsParameter {
 
     private String comment;
 
-    public EditInstanceAwsParameter(Long farmNo, Long instanceNo, String instanceType, String keyName,
-            String securityGroups, String subnet) {
-        this.farmNo = farmNo;
+    public EditInstanceAwsParameter(Long instanceNo, String instanceType, String keyName, String securityGroups,
+            String subnet) {
         this.instanceNo = instanceNo;
         this.instanceType = instanceType;
         this.keyName = keyName;
@@ -50,10 +47,6 @@ public class EditInstanceAwsParameter {
     public EditInstanceAwsParameter withComment(String comment) {
         this.comment = comment;
         return this;
-    }
-
-    public Long getFarmNo() {
-        return farmNo;
     }
 
     public Long getInstanceNo() {

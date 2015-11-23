@@ -18,7 +18,7 @@ public class EditLoadBalancerTest {
 
     @Test
     public void test() {
-        EditLoadBalancerParameter parameter = new EditLoadBalancerParameter(1L, 1L, 1L, "securityGroups");
+        EditLoadBalancerParameter parameter = new EditLoadBalancerParameter(1L, 1L, "securityGroups");
         parameter.withComment("comment");
         parameter.withSubnet("subnet");
         parameter.withIsInternal(false);

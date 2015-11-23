@@ -16,13 +16,12 @@ public class StopComponent {
         this.requester = requester;
     }
 
-    public void execute(Long farmNo, Long componentNo, List<Long> instanceNos) {
-        execute(farmNo, componentNo, instanceNos, null);
+    public void execute(Long componentNo, List<Long> instanceNos) {
+        execute(componentNo, instanceNos, null);
     }
 
-    public void execute(Long farmNo, Long componentNo, List<Long> instanceNos, Boolean isStopInstance) {
+    public void execute(Long componentNo, List<Long> instanceNos, Boolean isStopInstance) {
         Map<String, String> parameters = new LinkedHashMap<String, String>();
-        parameters.put("FarmNo", farmNo.toString());
         parameters.put("ComponentNo", componentNo.toString());
         parameters.put("InstanceNos", StringUtils.join(instanceNos, ","));
 

@@ -16,9 +16,8 @@ public class StartComponent {
         this.requester = requester;
     }
 
-    public void execute(Long farmNo, Long componentNo, List<Long> instanceNos) {
+    public void execute(Long componentNo, List<Long> instanceNos) {
         Map<String, String> parameters = new LinkedHashMap<String, String>();
-        parameters.put("FarmNo", farmNo.toString());
         parameters.put("ComponentNo", componentNo.toString());
         parameters.put("InstanceNos", StringUtils.join(instanceNos, ","));
 

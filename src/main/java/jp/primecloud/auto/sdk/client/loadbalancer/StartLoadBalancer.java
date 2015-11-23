@@ -13,9 +13,8 @@ public class StartLoadBalancer {
         this.requester = requester;
     }
 
-    public void execute(Long farmNo, Long loadBalancerNo) {
+    public void execute(Long loadBalancerNo) {
         Map<String, String> parameters = new LinkedHashMap<String, String>();
-        parameters.put("FarmNo", farmNo.toString());
         parameters.put("LoadBalancerNo", loadBalancerNo.toString());
 
         requester.execute("/StartLoadBalancer", parameters);

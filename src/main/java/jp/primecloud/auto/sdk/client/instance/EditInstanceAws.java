@@ -16,7 +16,6 @@ public class EditInstanceAws {
 
     public void execute(EditInstanceAwsParameter parameter) {
         Map<String, String> parameters = new LinkedHashMap<String, String>();
-        parameters.put("FarmNo", parameter.getFarmNo().toString());
         parameters.put("InstanceNo", parameter.getInstanceNo().toString());
         parameters.put("InstanceType", parameter.getInstanceType());
         parameters.put("KeyName", parameter.getKeyName());

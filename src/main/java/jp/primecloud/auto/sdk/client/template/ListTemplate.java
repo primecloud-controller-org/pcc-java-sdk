@@ -1,16 +1,15 @@
 package jp.primecloud.auto.sdk.client.template;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import jp.primecloud.auto.sdk.JacksonUtils;
 import jp.primecloud.auto.sdk.Requester;
-import jp.primecloud.auto.sdk.model.Template;
+import jp.primecloud.auto.sdk.model.template.Template;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.fasterxml.jackson.databind.node.NullNode;
 
 public class ListTemplate {
 
@@ -22,16 +21,10 @@ public class ListTemplate {
 
     public List<Template> execute() {
         JsonNode jsonNode = requester.execute("/ListTemplate");
-        jsonNode = JacksonUtils.getField(jsonNode, "Templates.Template");
+        jsonNode = JacksonUtils.getField(jsonNode, "Templates");
 
-        if (jsonNode == null) {
+        if (jsonNode == null || jsonNode instanceof NullNode) {
             return new ArrayList<Template>();
-        }
-
-        if (jsonNode instanceof ObjectNode) {
-            Template template = JacksonUtils.toObject(jsonNode, new TypeReference<Template>() {
-            });
-            return Arrays.asList(template);
         }
 
         return JacksonUtils.toObject(jsonNode, new TypeReference<List<Template>>() {

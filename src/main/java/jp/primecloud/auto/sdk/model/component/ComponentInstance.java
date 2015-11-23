@@ -1,4 +1,4 @@
-package jp.primecloud.auto.sdk.model;
+package jp.primecloud.auto.sdk.model.component;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

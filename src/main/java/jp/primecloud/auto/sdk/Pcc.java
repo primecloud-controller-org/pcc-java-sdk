@@ -2,13 +2,19 @@ package jp.primecloud.auto.sdk;
 
 import java.util.List;
 
+import jp.primecloud.auto.sdk.client.address.AddAwsAddress;
+import jp.primecloud.auto.sdk.client.address.DeleteAwsAddress;
+import jp.primecloud.auto.sdk.client.address.EditAwsAddress;
+import jp.primecloud.auto.sdk.client.address.ListAwsAddress;
 import jp.primecloud.auto.sdk.client.component.AttachComponent;
 import jp.primecloud.auto.sdk.client.component.CreateComponent;
 import jp.primecloud.auto.sdk.client.component.DeleteComponent;
 import jp.primecloud.auto.sdk.client.component.DescribeComponent;
 import jp.primecloud.auto.sdk.client.component.DetachComponent;
 import jp.primecloud.auto.sdk.client.component.EditComponent;
+import jp.primecloud.auto.sdk.client.component.GetAttachableComponent;
 import jp.primecloud.auto.sdk.client.component.ListComponent;
+import jp.primecloud.auto.sdk.client.component.ListComponentType;
 import jp.primecloud.auto.sdk.client.component.StartAllComponent;
 import jp.primecloud.auto.sdk.client.component.StartComponent;
 import jp.primecloud.auto.sdk.client.component.StopAllComponent;
@@ -43,15 +49,19 @@ import jp.primecloud.auto.sdk.client.loadbalancer.EnableLoadBalancerListener;
 import jp.primecloud.auto.sdk.client.loadbalancer.ListLoadBalancer;
 import jp.primecloud.auto.sdk.client.loadbalancer.StartLoadBalancer;
 import jp.primecloud.auto.sdk.client.loadbalancer.StopLoadBalancer;
+import jp.primecloud.auto.sdk.client.platform.DescribePlatform;
 import jp.primecloud.auto.sdk.client.platform.ListPlatform;
 import jp.primecloud.auto.sdk.client.template.ListTemplate;
-import jp.primecloud.auto.sdk.model.Component;
-import jp.primecloud.auto.sdk.model.Farm;
-import jp.primecloud.auto.sdk.model.Image;
-import jp.primecloud.auto.sdk.model.Instance;
-import jp.primecloud.auto.sdk.model.LoadBalancer;
-import jp.primecloud.auto.sdk.model.Platform;
-import jp.primecloud.auto.sdk.model.Template;
+import jp.primecloud.auto.sdk.model.address.AwsAddress;
+import jp.primecloud.auto.sdk.model.component.Component;
+import jp.primecloud.auto.sdk.model.component.ComponentInstance;
+import jp.primecloud.auto.sdk.model.component.ComponentType;
+import jp.primecloud.auto.sdk.model.farm.Farm;
+import jp.primecloud.auto.sdk.model.image.Image;
+import jp.primecloud.auto.sdk.model.instance.Instance;
+import jp.primecloud.auto.sdk.model.loadbalancer.LoadBalancer;
+import jp.primecloud.auto.sdk.model.platform.Platform;
+import jp.primecloud.auto.sdk.model.template.Template;
 import jp.primecloud.auto.sdk.parameter.CreateComponentParameter;
 import jp.primecloud.auto.sdk.parameter.CreateInstanceParameter;
 import jp.primecloud.auto.sdk.parameter.CreateLoadBalancerListenerParameter;
@@ -97,8 +107,8 @@ public class Pcc {
         return new ListInstance(requester).execute(farmNo);
     }
 
-    public Instance describeInstance(Long farmNo, Long instanceNo) {
-        return new DescribeInstance(requester).execute(farmNo, instanceNo);
+    public Instance describeInstance(Long instanceNo) {
+        return new DescribeInstance(requester).execute(instanceNo);
     }
 
     public Long createInstance(CreateInstanceParameter parameter) {
@@ -109,16 +119,16 @@ public class Pcc {
         new EditInstanceAws(requester).execute(parameter);
     }
 
-    public void deleteInstance(Long farmNo, Long instanceNo) {
-        new DeleteInstance(requester).execute(farmNo, instanceNo);
+    public void deleteInstance(Long instanceNo) {
+        new DeleteInstance(requester).execute(instanceNo);
     }
 
-    public void startInstance(Long farmNo, Long instanceNo) {
-        new StartInstance(requester).execute(farmNo, instanceNo);
+    public void startInstance(Long instanceNo) {
+        new StartInstance(requester).execute(instanceNo);
     }
 
-    public void startInstance(Long farmNo, Long instanceNo, Boolean isStartService) {
-        new StartInstance(requester).execute(farmNo, instanceNo, isStartService);
+    public void startInstance(Long instanceNo, Boolean isStartService) {
+        new StartInstance(requester).execute(instanceNo, isStartService);
     }
 
     public void stopInstance(Long farmNo, Long instanceNo) {
@@ -137,20 +147,24 @@ public class Pcc {
         new StopAllInstance(requester).execute(farmNo);
     }
 
-    public void enableZabbixMonitoringInstance(Long farmNo, Long instanceNo) {
-        new EnableZabbixMonitoringInstance(requester).execute(farmNo, instanceNo);
+    public void enableZabbixMonitoringInstance(Long instanceNo) {
+        new EnableZabbixMonitoringInstance(requester).execute(instanceNo);
     }
 
-    public void disableZabbixMonitoringInstance(Long farmNo, Long instanceNo) {
-        new DisableZabbixMonitoringInstance(requester).execute(farmNo, instanceNo);
+    public void disableZabbixMonitoringInstance(Long instanceNo) {
+        new DisableZabbixMonitoringInstance(requester).execute(instanceNo);
+    }
+
+    public List<ComponentType> listComponentType(Long farmNo) {
+        return new ListComponentType(requester).execute(farmNo);
     }
 
     public List<Component> listComponent(Long farmNo) {
         return new ListComponent(requester).execute(farmNo);
     }
 
-    public Component describeComponent(Long farmNo, Long componentNo) {
-        return new DescribeComponent(requester).execute(farmNo, componentNo);
+    public Component describeComponent(Long componentNo) {
+        return new DescribeComponent(requester).execute(componentNo);
     }
 
     public Long createComponent(CreateComponentParameter parameter) {
@@ -161,28 +175,32 @@ public class Pcc {
         new EditComponent(requester).execute(parameter);
     }
 
-    public void deleteComponent(Long farmNo, Long componentNo) {
-        new DeleteComponent(requester).execute(farmNo, componentNo);
+    public void deleteComponent(Long componentNo) {
+        new DeleteComponent(requester).execute(componentNo);
     }
 
-    public void attachComponent(Long farmNo, Long componentNo, Long instanceNo) {
-        new AttachComponent(requester).execute(farmNo, componentNo, instanceNo);
+    public List<ComponentInstance> getAttachableComponent(Long componentNo) {
+        return new GetAttachableComponent(requester).execute(componentNo);
     }
 
-    public void detachComponent(Long farmNo, Long componentNo, Long instanceNo) {
-        new DetachComponent(requester).execute(farmNo, componentNo, instanceNo);
+    public void attachComponent(Long componentNo, Long instanceNo) {
+        new AttachComponent(requester).execute(componentNo, instanceNo);
     }
 
-    public void startComponent(Long farmNo, Long componentNo, List<Long> instanceNos) {
-        new StartComponent(requester).execute(farmNo, componentNo, instanceNos);
+    public void detachComponent(Long componentNo, Long instanceNo) {
+        new DetachComponent(requester).execute(componentNo, instanceNo);
     }
 
-    public void stopComponent(Long farmNo, Long componentNo, List<Long> instanceNos) {
-        new StopComponent(requester).execute(farmNo, componentNo, instanceNos);
+    public void startComponent(Long componentNo, List<Long> instanceNos) {
+        new StartComponent(requester).execute(componentNo, instanceNos);
     }
 
-    public void stopComponent(Long farmNo, Long componentNo, List<Long> instanceNos, Boolean isStopInstance) {
-        new StopComponent(requester).execute(farmNo, componentNo, instanceNos, isStopInstance);
+    public void stopComponent(Long componentNo, List<Long> instanceNos) {
+        new StopComponent(requester).execute(componentNo, instanceNos);
+    }
+
+    public void stopComponent(Long componentNo, List<Long> instanceNos, Boolean isStopInstance) {
+        new StopComponent(requester).execute(componentNo, instanceNos, isStopInstance);
     }
 
     public void startAllComponent(Long farmNo) {
@@ -201,8 +219,8 @@ public class Pcc {
         return new ListLoadBalancer(requester).execute(farmNo);
     }
 
-    public LoadBalancer describeLoadBalancer(Long farmNo, Long loadBalancerNo) {
-        return new DescribeLoadBalancer(requester).execute(farmNo, loadBalancerNo);
+    public LoadBalancer describeLoadBalancer(Long loadBalancerNo) {
+        return new DescribeLoadBalancer(requester).execute(loadBalancerNo);
     }
 
     public Long createLoadBalancer(CreateLoadBalancerParameter parameter) {
@@ -213,24 +231,24 @@ public class Pcc {
         new EditLoadBalancer(requester).execute(parameter);
     }
 
-    public void deleteLoadBalancer(Long farmNo, Long loadBalancerNo) {
-        new DeleteLoadBalancer(requester).execute(farmNo, loadBalancerNo);
+    public void deleteLoadBalancer(Long loadBalancerNo) {
+        new DeleteLoadBalancer(requester).execute(loadBalancerNo);
     }
 
-    public void attachLoadBalancer(Long farmNo, Long loadBalancerNo, Long instanceNo) {
-        new AttachLoadBalancer(requester).execute(farmNo, loadBalancerNo, instanceNo);
+    public void attachLoadBalancer(Long loadBalancerNo, Long instanceNo) {
+        new AttachLoadBalancer(requester).execute(loadBalancerNo, instanceNo);
     }
 
-    public void detachLoadBalancer(Long farmNo, Long loadBalancerNo, Long instanceNo) {
-        new DetachLoadBalancer(requester).execute(farmNo, loadBalancerNo, instanceNo);
+    public void detachLoadBalancer(Long loadBalancerNo, Long instanceNo) {
+        new DetachLoadBalancer(requester).execute(loadBalancerNo, instanceNo);
     }
 
-    public void startLoadBalancer(Long farmNo, Long loadBalancerNo) {
-        new StartLoadBalancer(requester).execute(farmNo, loadBalancerNo);
+    public void startLoadBalancer(Long loadBalancerNo) {
+        new StartLoadBalancer(requester).execute(loadBalancerNo);
     }
 
-    public void stopLoadBalancer(Long farmNo, Long loadBalancerNo) {
-        new StopLoadBalancer(requester).execute(farmNo, loadBalancerNo);
+    public void stopLoadBalancer(Long loadBalancerNo) {
+        new StopLoadBalancer(requester).execute(loadBalancerNo);
     }
 
     public void editLoadBalancerHealthCheck(EditLoadBalancerHealthCheckParameter parameter) {
@@ -241,24 +259,44 @@ public class Pcc {
         new CreateLoadBalancerListener(requester).execute(parameter);
     }
 
-    public void deleteLoadBalancerListener(Long farmNo, Long loadBalancerNo, Integer loadBalancerPort) {
-        new DeleteLoadBalancerListener(requester).execute(farmNo, loadBalancerNo, loadBalancerPort);
+    public void deleteLoadBalancerListener(Long loadBalancerNo, Integer loadBalancerPort) {
+        new DeleteLoadBalancerListener(requester).execute(loadBalancerNo, loadBalancerPort);
     }
 
-    public void enableLoadBalancerListener(Long farmNo, Long loadBalancerNo, Integer loadBalancerPort) {
-        new EnableLoadBalancerListener(requester).execute(farmNo, loadBalancerNo, loadBalancerPort);
+    public void enableLoadBalancerListener(Long loadBalancerNo, Integer loadBalancerPort) {
+        new EnableLoadBalancerListener(requester).execute(loadBalancerNo, loadBalancerPort);
     }
 
-    public void disableLoadBalancerListener(Long farmNo, Long loadBalancerNo, Integer loadBalancerPort) {
-        new DisableLoadBalancerListener(requester).execute(farmNo, loadBalancerNo, loadBalancerPort);
+    public void disableLoadBalancerListener(Long loadBalancerNo, Integer loadBalancerPort) {
+        new DisableLoadBalancerListener(requester).execute(loadBalancerNo, loadBalancerPort);
     }
 
-    public List<Platform> listPlatform(Long farmNo) {
-        return new ListPlatform(requester).execute(farmNo);
+    public List<Platform> listPlatform() {
+        return new ListPlatform(requester).execute();
     }
 
-    public List<Image> listImage(Long farmNo, Long platformNo) {
-        return new ListImage(requester).execute(farmNo, platformNo);
+    public Platform describePlatform(Long platformNo) {
+        return new DescribePlatform(requester).execute(platformNo);
+    }
+
+    public List<Image> listImage(Long platformNo) {
+        return new ListImage(requester).execute(platformNo);
+    }
+
+    public List<AwsAddress> listAwsAddress(Long platformNo) {
+        return new ListAwsAddress(requester).execute(platformNo);
+    }
+
+    public AwsAddress addAwsAddress(Long platformNo, Long farmNo) {
+        return new AddAwsAddress(requester).execute(platformNo, farmNo);
+    }
+
+    public void editAwsAddress(Long addressNo, String comment) {
+        new EditAwsAddress(requester).execute(addressNo, comment);
+    }
+
+    public void deleteAwsAddress(Long addressNo, Long farmNo) {
+        new DeleteAwsAddress(requester).execute(addressNo, farmNo);
     }
 
     public List<Template> listTemplate() {

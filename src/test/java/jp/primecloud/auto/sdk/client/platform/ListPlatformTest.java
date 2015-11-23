@@ -7,7 +7,7 @@ import java.util.List;
 import jp.primecloud.auto.sdk.JacksonUtils;
 import jp.primecloud.auto.sdk.Pcc;
 import jp.primecloud.auto.sdk.TestFactory;
-import jp.primecloud.auto.sdk.model.Platform;
+import jp.primecloud.auto.sdk.model.platform.Platform;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -23,7 +23,7 @@ public class ListPlatformTest {
 
     @Test
     public void test() {
-        List<Platform> platforms = pcc.listPlatform(1L);
+        List<Platform> platforms = pcc.listPlatform();
 
         assertNotNull(platforms);
 

@@ -17,7 +17,7 @@ public class DisableLoadBalancerListenerTest {
 
     @Test
     public void test() {
-        pcc.disableLoadBalancerListener(1L, 1L, 80);
+        pcc.disableLoadBalancerListener(1L, 80);
     }
 
 }

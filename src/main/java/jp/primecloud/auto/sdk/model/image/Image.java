@@ -1,4 +1,6 @@
-package jp.primecloud.auto.sdk.model;
+package jp.primecloud.auto.sdk.model.image;
+
+import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -15,6 +17,9 @@ public class Image {
 
     @JsonProperty("OS")
     private String os;
+
+    @JsonProperty("InstanceTypes")
+    private List<String> instanceTypes;
 
     public Long getImageNo() {
         return imageNo;
@@ -46,6 +51,14 @@ public class Image {
 
     public void setOs(String os) {
         this.os = os;
+    }
+
+    public List<String> getInstanceTypes() {
+        return instanceTypes;
+    }
+
+    public void setInstanceTypes(List<String> instanceTypes) {
+        this.instanceTypes = instanceTypes;
     }
 
 }

@@ -16,7 +16,6 @@ public class CreateLoadBalancerListener {
 
     public void execute(CreateLoadBalancerListenerParameter parameter) {
         Map<String, String> parameters = new LinkedHashMap<String, String>();
-        parameters.put("FarmNo", parameter.getFarmNo().toString());
         parameters.put("LoadBalancerNo", parameter.getLoadBalancerNo().toString());
         parameters.put("LoadBalancerPort", parameter.getLoadBalancerPort().toString());
         parameters.put("ServicePort", parameter.getServicePort().toString());
