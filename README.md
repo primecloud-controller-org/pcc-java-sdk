@@ -24,17 +24,22 @@ for (Farm farm : farms) {
 }
 ```
 
+
 ## Usage for maven
 
-Add the following repository setting into pom.xml,
+Install **pcc-java-sdk** on your computer,
 
 ```
-<repositories>
-  <repository>
-    <id>pcc-mvn-repo</id>
-    <url>https://ymstmsys.github.io/mvn-repo/</url>
-  </repository>
-</repositories>
+# git clone https://github.com/primecloud-controller-org/pcc-java-sdk.git
+
+# cd pcc-java-sdk
+
+# mvn clean source:jar install
 ```
 
 and add dependency setting.
+
+
+## Requirement
+
+**pcc-java-sdk** works on Java 8.
