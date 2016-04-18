@@ -5,9 +5,46 @@
 Java SDK for PrimeCloud Controller.
 
 
+
+## Requirement
+
+**pcc-java-sdk** works on Java 8.
+
+
+
+## Support PCC version
+
+| PrimeCloud Controller | pcc-java-sdk |
+|-----------------------|--------------|
+| 2.6.0 | 1.0.0 |
+
+
+
 ## Usage
 
-Create **jp.primecloud.auto.sdk.Pcc** instance, and call method.
+Add the following repository setting into pom.xml,
+
+```
+<repositories>
+  <repository>
+    <id>pcc-mvn-repo</id>
+    <url>https://primecloud-controller-org.github.io/mvn-repo/</url>
+  </repository>
+</repositories>
+```
+
+and add dependency setting,
+
+```
+<dependency>
+  <groupId>jp.primecloud.auto.sdk</groupId>
+  <artifactId>pcc-java-sdk</artifactId>
+  <version>VERSION</version>
+</dependency>
+```
+
+Then, create **jp.primecloud.auto.sdk.Pcc** instance, and call method.
+
 
 
 ## Example
@@ -23,23 +60,3 @@ for (Farm farm : farms) {
     System.out.println(farm.getFarmNo() + "\t" + farm.getFarmName());
 }
 ```
-
-
-## Usage for maven
-
-Install **pcc-java-sdk** on your computer,
-
-```
-# git clone https://github.com/primecloud-controller-org/pcc-java-sdk.git
-
-# cd pcc-java-sdk
-
-# mvn clean source:jar install
-```
-
-and add dependency setting.
-
-
-## Requirement
-
-**pcc-java-sdk** works on Java 8.
