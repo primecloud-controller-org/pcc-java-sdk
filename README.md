@@ -60,3 +60,12 @@ for (Farm farm : farms) {
     System.out.println(farm.getFarmNo() + "\t" + farm.getFarmName());
 }
 ```
+
+
+
+## License
+
+**pcc-java-sdk** is released under version 2.0 of Apache License.
+
+http://www.apache.org/licenses/LICENSE-2.0
+
