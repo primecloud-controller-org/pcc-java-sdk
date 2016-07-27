@@ -35,7 +35,7 @@ public class AddAwsAddressTest {
 
     @Test
     public void test() {
-        AwsAddress awsAddress = pcc.addAwsAddress(2L, 1L);
+        AwsAddress awsAddress = pcc.addAwsAddress(2L);
 
         assertNotNull(awsAddress);
 

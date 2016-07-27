@@ -32,7 +32,7 @@ public class DeleteAwsAddressTest {
 
     @Test
     public void test() {
-        pcc.deleteAwsAddress(1L, 1L);
+        pcc.deleteAwsAddress(1L);
     }
 
 }

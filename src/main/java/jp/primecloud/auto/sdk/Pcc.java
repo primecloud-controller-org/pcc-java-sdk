@@ -302,16 +302,16 @@ public class Pcc {
         return new ListAwsAddress(requester).execute(platformNo);
     }
 
-    public AwsAddress addAwsAddress(Long platformNo, Long farmNo) {
-        return new AddAwsAddress(requester).execute(platformNo, farmNo);
+    public AwsAddress addAwsAddress(Long platformNo) {
+        return new AddAwsAddress(requester).execute(platformNo);
     }
 
     public void editAwsAddress(Long addressNo, String comment) {
         new EditAwsAddress(requester).execute(addressNo, comment);
     }
 
-    public void deleteAwsAddress(Long addressNo, Long farmNo) {
-        new DeleteAwsAddress(requester).execute(addressNo, farmNo);
+    public void deleteAwsAddress(Long addressNo) {
+        new DeleteAwsAddress(requester).execute(addressNo);
     }
 
     public List<Template> listTemplate() {

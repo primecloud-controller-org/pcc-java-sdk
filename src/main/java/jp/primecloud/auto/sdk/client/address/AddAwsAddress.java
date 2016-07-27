@@ -33,10 +33,9 @@ public class AddAwsAddress {
         this.requester = requester;
     }
 
-    public AwsAddress execute(Long platformNo, Long farmNo) {
+    public AwsAddress execute(Long platformNo) {
         Map<String, String> parameters = new LinkedHashMap<String, String>();
         parameters.put("PlatformNo", platformNo.toString());
-        parameters.put("FarmNo", farmNo.toString());
 
         JsonNode jsonNode = requester.execute("/AddAwsAddress", parameters);
         jsonNode = JacksonUtils.getField(jsonNode, "AwsAddress");

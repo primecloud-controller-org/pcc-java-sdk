@@ -28,10 +28,9 @@ public class DeleteAwsAddress {
         this.requester = requester;
     }
 
-    public void execute(Long addressNo, Long farmNo) {
+    public void execute(Long addressNo) {
         Map<String, String> parameters = new LinkedHashMap<String, String>();
         parameters.put("AddressNo", addressNo.toString());
-        parameters.put("FarmNo", farmNo.toString());
 
         requester.execute("/DeleteAwsAddress", parameters);
     }
