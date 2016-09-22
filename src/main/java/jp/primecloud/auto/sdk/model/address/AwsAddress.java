@@ -31,7 +31,7 @@ public class AwsAddress {
     @JsonProperty("Comment")
     private String comment;
 
-    @JsonProperty("AssociateInstanceno")
+    @JsonProperty("AssociateInstanceNo")
     private Long associateInstanceNo;
 
     public Long getAddressNo() {
