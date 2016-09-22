@@ -16,6 +16,7 @@ Java SDK for PrimeCloud Controller.
 
 | PrimeCloud Controller | pcc-java-sdk |
 |-----------------------|--------------|
+| 2.7.0 | 1.1.0 |
 | 2.6.0 | 1.0.0 |
 
 
