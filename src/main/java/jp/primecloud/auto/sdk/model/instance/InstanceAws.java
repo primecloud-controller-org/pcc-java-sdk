@@ -15,6 +15,8 @@
  */
 package jp.primecloud.auto.sdk.model.instance;
 
+import jp.primecloud.auto.sdk.model.address.AwsAddress;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class InstanceAws {
@@ -51,6 +53,9 @@ public class InstanceAws {
 
     @JsonProperty("PrivateIpAddress")
     private String privateIpAddress;
+
+    @JsonProperty("AwsAddress")
+    private AwsAddress awsAddress;
 
     public String getKeyName() {
         return keyName;
@@ -138,6 +143,14 @@ public class InstanceAws {
 
     public void setPrivateIpAddress(String privateIpAddress) {
         this.privateIpAddress = privateIpAddress;
+    }
+
+    public AwsAddress getAwsAddress() {
+        return awsAddress;
+    }
+
+    public void setAwsAddress(AwsAddress awsAddress) {
+        this.awsAddress = awsAddress;
     }
 
 }

@@ -25,6 +25,15 @@ public class Instance {
     @JsonProperty("InstanceName")
     private String instanceName;
 
+    @JsonProperty("FarmNo")
+    private Long farmNo;
+
+    @JsonProperty("PlatformNo")
+    private Long platformNo;
+
+    @JsonProperty("ImageNo")
+    private Long imageNo;
+
     @JsonProperty("Comment")
     private String comment;
 
@@ -75,6 +84,30 @@ public class Instance {
 
     public void setInstanceName(String instanceName) {
         this.instanceName = instanceName;
+    }
+
+    public Long getFarmNo() {
+        return farmNo;
+    }
+
+    public void setFarmNo(Long farmNo) {
+        this.farmNo = farmNo;
+    }
+
+    public Long getPlatformNo() {
+        return platformNo;
+    }
+
+    public void setPlatformNo(Long platformNo) {
+        this.platformNo = platformNo;
+    }
+
+    public Long getImageNo() {
+        return imageNo;
+    }
+
+    public void setImageNo(Long imageNo) {
+        this.imageNo = imageNo;
     }
 
     public String getComment() {

@@ -27,8 +27,17 @@ public class LoadBalancer {
     @JsonProperty("LoadBalancerName")
     private String loadBalancerName;
 
+    @JsonProperty("FarmNo")
+    private Long farmNo;
+
+    @JsonProperty("Comment")
+    private String comment;
+
     @JsonProperty("FQDN")
     private String fqdn;
+
+    @JsonProperty("PlatformNo")
+    private Long platformNo;
 
     @JsonProperty("Type")
     private String type;
@@ -73,12 +82,36 @@ public class LoadBalancer {
         this.loadBalancerName = loadBalancerName;
     }
 
+    public Long getFarmNo() {
+        return farmNo;
+    }
+
+    public void setFarmNo(Long farmNo) {
+        this.farmNo = farmNo;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
+
     public String getFqdn() {
         return fqdn;
     }
 
     public void setFqdn(String fqdn) {
         this.fqdn = fqdn;
+    }
+
+    public Long getPlatformNo() {
+        return platformNo;
+    }
+
+    public void setPlatformNo(Long platformNo) {
+        this.platformNo = platformNo;
     }
 
     public String getType() {
