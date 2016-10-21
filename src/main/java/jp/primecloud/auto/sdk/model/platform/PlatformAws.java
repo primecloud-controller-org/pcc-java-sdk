@@ -22,30 +22,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class PlatformAws {
 
-    @JsonProperty("Host")
-    private String host;
-
-    @JsonProperty("Port")
-    private Integer port;
-
-    @JsonProperty("Secure")
-    private Boolean secure;
-
-    @JsonProperty("Euca")
-    private Boolean euca;
-
-    @JsonProperty("Vpc")
-    private Boolean vpc;
-
-    @JsonProperty("Region")
-    private String region;
-
-    @JsonProperty("AvailabilityZone")
-    private String availabilityZone;
-
-    @JsonProperty("VpcId")
-    private String vpcId;
-
     @JsonProperty("KeyNames")
     private List<String> keyNames = new ArrayList<String>();
 
@@ -63,70 +39,6 @@ public class PlatformAws {
 
     @JsonProperty("DefLbSubnet")
     private String defLbSubnet;
-
-    public String getHost() {
-        return host;
-    }
-
-    public void setHost(String host) {
-        this.host = host;
-    }
-
-    public Integer getPort() {
-        return port;
-    }
-
-    public void setPort(Integer port) {
-        this.port = port;
-    }
-
-    public Boolean getSecure() {
-        return secure;
-    }
-
-    public void setSecure(Boolean secure) {
-        this.secure = secure;
-    }
-
-    public Boolean getEuca() {
-        return euca;
-    }
-
-    public void setEuca(Boolean euca) {
-        this.euca = euca;
-    }
-
-    public Boolean getVpc() {
-        return vpc;
-    }
-
-    public void setVpc(Boolean vpc) {
-        this.vpc = vpc;
-    }
-
-    public String getRegion() {
-        return region;
-    }
-
-    public void setRegion(String region) {
-        this.region = region;
-    }
-
-    public String getAvailabilityZone() {
-        return availabilityZone;
-    }
-
-    public void setAvailabilityZone(String availabilityZone) {
-        this.availabilityZone = availabilityZone;
-    }
-
-    public String getVpcId() {
-        return vpcId;
-    }
-
-    public void setVpcId(String vpcId) {
-        this.vpcId = vpcId;
-    }
 
     public List<String> getKeyNames() {
         return keyNames;
