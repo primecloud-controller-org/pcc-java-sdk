@@ -15,6 +15,33 @@
  */
 package jp.primecloud.auto.sdk.model.platform;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class PlatformVmware {
+
+    @JsonProperty("KeyNames")
+    private List<String> keyNames = new ArrayList<String>();
+
+    @JsonProperty("ComputeResources")
+    private List<String> computeResources = new ArrayList<String>();
+
+    public List<String> getKeyNames() {
+        return keyNames;
+    }
+
+    public void setKeyNames(List<String> keyNames) {
+        this.keyNames = keyNames;
+    }
+
+    public List<String> getComputeResources() {
+        return computeResources;
+    }
+
+    public void setComputeResources(List<String> computeResources) {
+        this.computeResources = computeResources;
+    }
 
 }

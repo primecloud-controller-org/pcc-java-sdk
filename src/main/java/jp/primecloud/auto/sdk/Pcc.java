@@ -44,6 +44,7 @@ import jp.primecloud.auto.sdk.client.instance.DeleteInstance;
 import jp.primecloud.auto.sdk.client.instance.DescribeInstance;
 import jp.primecloud.auto.sdk.client.instance.DisableZabbixMonitoringInstance;
 import jp.primecloud.auto.sdk.client.instance.EditInstanceAws;
+import jp.primecloud.auto.sdk.client.instance.EditInstanceVmware;
 import jp.primecloud.auto.sdk.client.instance.EnableZabbixMonitoringInstance;
 import jp.primecloud.auto.sdk.client.instance.ListInstance;
 import jp.primecloud.auto.sdk.client.instance.StartAllInstance;
@@ -83,6 +84,7 @@ import jp.primecloud.auto.sdk.parameter.CreateLoadBalancerListenerParameter;
 import jp.primecloud.auto.sdk.parameter.CreateLoadBalancerParameter;
 import jp.primecloud.auto.sdk.parameter.EditComponentParameter;
 import jp.primecloud.auto.sdk.parameter.EditInstanceAwsParameter;
+import jp.primecloud.auto.sdk.parameter.EditInstanceVmwareParameter;
 import jp.primecloud.auto.sdk.parameter.EditLoadBalancerHealthCheckParameter;
 import jp.primecloud.auto.sdk.parameter.EditLoadBalancerParameter;
 
@@ -132,6 +134,10 @@ public class Pcc {
 
     public void editInstanceAws(EditInstanceAwsParameter parameter) {
         new EditInstanceAws(requester).execute(parameter);
+    }
+
+    public void editInstanceVmware(EditInstanceVmwareParameter parameter) {
+        new EditInstanceVmware(requester).execute(parameter);
     }
 
     public void deleteInstance(Long instanceNo) {
