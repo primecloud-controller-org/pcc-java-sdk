@@ -60,9 +60,6 @@ public class LoadBalancer {
     @JsonProperty("Instances")
     private List<LoadBalancerInstance> instances;
 
-    @JsonProperty("AutoScaling")
-    private AutoScaling autoScaling;
-
     @JsonProperty("AWS")
     private LoadBalancerAws aws;
 
@@ -168,14 +165,6 @@ public class LoadBalancer {
 
     public void setInstances(List<LoadBalancerInstance> instances) {
         this.instances = instances;
-    }
-
-    public AutoScaling getAutoScaling() {
-        return autoScaling;
-    }
-
-    public void setAutoScaling(AutoScaling autoScaling) {
-        this.autoScaling = autoScaling;
     }
 
     public LoadBalancerAws getAws() {
