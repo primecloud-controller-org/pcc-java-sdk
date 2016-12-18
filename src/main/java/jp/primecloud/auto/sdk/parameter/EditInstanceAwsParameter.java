@@ -35,6 +35,8 @@ public class EditInstanceAwsParameter {
 
     private String comment;
 
+    private Integer rootSize;
+
     public EditInstanceAwsParameter(Long instanceNo, String instanceType, String keyName, String securityGroups,
             String subnet) {
         this.instanceNo = instanceNo;
@@ -61,6 +63,11 @@ public class EditInstanceAwsParameter {
 
     public EditInstanceAwsParameter withComment(String comment) {
         this.comment = comment;
+        return this;
+    }
+
+    public EditInstanceAwsParameter withRootSize(Integer rootSize) {
+        this.rootSize = rootSize;
         return this;
     }
 
@@ -98,6 +105,10 @@ public class EditInstanceAwsParameter {
 
     public String getComment() {
         return comment;
+    }
+
+    public Integer getRootSize() {
+        return rootSize;
     }
 
 }

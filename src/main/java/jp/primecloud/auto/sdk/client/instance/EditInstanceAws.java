@@ -48,6 +48,10 @@ public class EditInstanceAws {
             parameters.put("PrivateIpAddress", parameter.getPrivateIpAddress());
         }
 
+        if (parameter.getRootSize() != null) {
+            parameters.put("RootSize", parameter.getRootSize().toString());
+        }
+
         if (parameter.getComment() != null) {
             parameters.put("Comment", parameter.getComment());
         }
