@@ -52,7 +52,7 @@ public class EditInstanceAws {
             parameters.put("Comment", parameter.getComment());
         }
 
-        requester.execute("/EditInstance", parameters);
+        requester.execute("/EditInstanceAws", parameters);
     }
 
 }
