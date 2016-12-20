@@ -35,6 +35,8 @@ public class EditInstanceVmwareParameter {
 
     private String comment;
 
+    private Integer rootSize;
+
     public EditInstanceVmwareParameter(Long instanceNo, String instanceType, String keyName, String computeResource,
             Boolean isStaticIp) {
         this.instanceNo = instanceNo;
@@ -61,6 +63,11 @@ public class EditInstanceVmwareParameter {
 
     public EditInstanceVmwareParameter withComment(String comment) {
         this.comment = comment;
+        return this;
+    }
+
+    public EditInstanceVmwareParameter withRootSize(Integer rootSize) {
+        this.rootSize = rootSize;
         return this;
     }
 
@@ -98,6 +105,10 @@ public class EditInstanceVmwareParameter {
 
     public String getComment() {
         return comment;
+    }
+
+    public Integer getRootSize() {
+        return rootSize;
     }
 
 }

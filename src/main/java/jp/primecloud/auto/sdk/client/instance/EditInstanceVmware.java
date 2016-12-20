@@ -53,6 +53,10 @@ public class EditInstanceVmware {
             parameters.put("Comment", parameter.getComment());
         }
 
+        if (parameter.getRootSize() != null) {
+            parameters.put("RootSize", parameter.getRootSize().toString());
+        }
+
         requester.execute("/EditInstanceVmware", parameters);
     }
 
