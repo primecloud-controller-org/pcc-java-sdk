@@ -39,6 +39,9 @@ public class InstanceAws {
     @JsonProperty("Subnet")
     private String subnet;
 
+    @JsonProperty("RootSize")
+    private Integer rootSize;
+
     @JsonProperty("Status")
     private String status;
 
@@ -103,6 +106,14 @@ public class InstanceAws {
 
     public void setSubnet(String subnet) {
         this.subnet = subnet;
+    }
+
+    public Integer getRootSize() {
+        return rootSize;
+    }
+
+    public void setRootSize(Integer rootSize) {
+        this.rootSize = rootSize;
     }
 
     public String getStatus() {

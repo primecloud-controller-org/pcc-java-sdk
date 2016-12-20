@@ -37,6 +37,9 @@ public class InstanceVmware {
     @JsonProperty("KeyName")
     private String keyName;
 
+    @JsonProperty("RootSize")
+    private Integer rootSize;
+
     @JsonProperty("IpAddress")
     private String ipAddress;
 
@@ -98,6 +101,14 @@ public class InstanceVmware {
 
     public void setKeyName(String keyName) {
         this.keyName = keyName;
+    }
+
+    public Integer getRootSize() {
+        return rootSize;
+    }
+
+    public void setRootSize(Integer rootSize) {
+        this.rootSize = rootSize;
     }
 
     public String getIpAddress() {
